@@ -1,12 +1,10 @@
 {
-  "name": "callbag-buffer",
+  "name": "callbag-cut",
   "version": "1.0.0",
-  "description": "👜 Callbag operator which buffers source values until separator stream emits.",
-  "main": "dist/callbag-buffer.js",
-  "module": "dist/callbag-buffer.esm.js",
-  "files": [
-    "dist"
-  ],
+  "description": "👜 Callbag operator which accumulates source values until a separator emits",
+  "main": "dist/callbag-cut.js",
+  "module": "dist/callbag-cut.esm.js",
+  "files": ["dist"],
   "scripts": {
     "pretest": "npm run build",
     "test": "jest --env=node",
@@ -17,18 +15,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Andarist/callbag-buffer.git"
+    "url": "git+https://github.com/petyosi/callbag-cut.git"
   },
-  "keywords": [
-    "callbag",
-    "callbags"
-  ],
-  "author": "Mateusz Burzyński <mateuszburzynski@gmail.com> (https://github.com/Andarist)",
+  "keywords": ["callbag", "callbags"],
+  "author": "Origin: Mateusz Burzyński <mateuszburzynski@gmail.com> (https://github.com/Andarist), Mod: Petyo Ivanov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Andarist/callbag-buffer/issues"
+    "url": "https://github.com/petyosi/callbag-cut/issues"
   },
-  "homepage": "https://github.com/Andarist/callbag-buffer#readme",
+  "homepage": "https://github.com/petyosi/callbag-cut#readme",
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",

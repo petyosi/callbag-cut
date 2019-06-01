@@ -1,11 +1,11 @@
-# callbag-buffer
+# callbag-cut
 
-Callbag operator which buffers source values until separator stream emits.
+Mod of callbag buffer. Emits the buffered values until the separator emits a value, "cutting" the source.
 
 ## Example
 
 ```js
-import buffer from 'callbag-buffer'
+import cut from 'callbag-cut'
 import forEach from 'callbag-for-each'
 import fromEvent from 'callbag-from-event'
 import map from 'callbag-map'
@@ -16,9 +16,9 @@ const btn = document.getElementById('#release')
 pipe(
   fromEvent(document, 'click'),
   map(() => Math.floor(Math.random() * 100))
-  buffer(fromEvent(btn, 'click')),
+  cut(fromEvent(btn, 'click')),
   forEach(values => {
-    console.log(values) // [86, 93, 57, 64] ...
+    console.log(values) // [86], [86, 93], [86, 93, 57], [], [64] ...
   })
 )
 ```

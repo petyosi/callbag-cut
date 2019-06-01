@@ -1,4 +1,4 @@
-export default function buffer(separator) {
+export default function cut(separator) {
   return source => (start, sink) => {
     if (start !== 0) return
 
@@ -23,6 +23,7 @@ export default function buffer(separator) {
 
       if (type === 1) {
         buffer.push(data)
+        sink(1, buffer.slice())
         return
       }
 
@@ -38,7 +39,8 @@ export default function buffer(separator) {
         separatorTalkback = data
         return
       }
-      sink(1, buffer.splice(0))
+      buffer = []
+      sink(1, buffer.slice())
     })
   }
 }
